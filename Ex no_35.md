@@ -1,48 +1,41 @@
-# EX 34 C program to read a file name from user and create that file and insert student roll numbers in to that file.
+# EX 35 C program to create a file named "Hospital.txt" and display messages on successful creation, opening, and closing of the file.
 ## DATE:
 ## AIM:
-To write a C program to read a file name from user and create that file and insert student roll numbers in to that file.
+To write a C program to create a file named "Hospital.txt" and display messages on successful creation, opening, and closing of the file.
 
 ## Algorithm
 
-1.Declare a file pointer, a character array for the file name, and variables for number of students and roll numbers.
+1.Declare a file pointer variable.
 
-2.Read the file name from the user and open the file using fopen() in write mode "w".
+2.Open (or create) the file "Hospital.txt" using fopen() in write mode "w".
 
-3.Check if the file pointer is NULL; if so, display an error message and terminate the program.
+3.Check whether the file pointer is NULL to handle file creation errors.
 
-4.Read the number of student roll numbers and use a loop to input each roll number and write it into the file using fprintf().
+4.If the file is created successfully, display messages indicating file creation and opening.
 
-5.Close the file using fclose() and display a success message.
+5.Close the file using fclose() and display a message indicating successful closure.
 
-## Program:
+## Program
+
 ```
 #include <stdio.h>
 
 int main() {
     FILE *fp;
-    char a[100];
-    int n, roll;
-    scanf("%s", a);
-
-    fp = fopen(a, "w");
+    fp = fopen("Hospital.txt", "w");
 
     if (fp == NULL) {
         printf("Error! Unable to create file.\n");
-        return 1;
-    }
-    scanf("%d", &n);
-
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &roll);
-        fprintf(fp, "%d\n", roll); 
+        return 1; 
     }
 
-    
+    printf("File Created Successfully\n");
+    printf("File Opened\n");
+
+   
     fclose(fp);
 
-    printf("%s Opened\n", a);
-    printf("Data added Successfully\n");
+    printf("File Closed\n");
 
     return 0;
 }
@@ -51,7 +44,8 @@ int main() {
 
 ## Output:
 
-<img width="547" height="300" alt="Screenshot 2026-03-19 185429" src="https://github.com/user-attachments/assets/61a61ee6-af3a-4853-a1a1-ffd2dc95931b" />
+<img width="505" height="167" alt="Screenshot 2026-03-19 185811" src="https://github.com/user-attachments/assets/6cec6e50-7db7-462f-bcc2-0fad2ee0a247" />
+
 
 
 ## Result:
